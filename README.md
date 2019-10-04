@@ -8,7 +8,7 @@ Simple appliaction written in java for managing hotel rooms occupancy across tim
 
 #### Java JDK
 
-You can use [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or [OpenJDK](https://openjdk.java.net/install/index.html) for building this application from source.
+You can use [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or [OpenJDK](https://openjdk.java.net/install/index.html) to build this application from source.
 
 #### PostgreSQL Database
 
