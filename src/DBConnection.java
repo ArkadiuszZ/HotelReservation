@@ -9,7 +9,7 @@ public class DBConnection
 
 	private DBConnection()
 	{
-		settings = new Settings();
+		settings =Settings.getInstance();
 		String url = "jdbc:postgresql://" +
 			settings.getDBHost() +
 			"/"+
@@ -23,14 +23,14 @@ public class DBConnection
 		}
 	}
 
-	private static class LazyHolder
+	private static class Singleton
 	{
 		private static final DBConnection INSTANCE = new DBConnection();
 	}
 
 	public static DBConnection getInstance()
 	{
-		return LazyHolder.INSTANCE;
+		return Singleton.INSTANCE;
 	}
 }
 

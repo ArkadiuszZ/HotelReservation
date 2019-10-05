@@ -1,12 +1,51 @@
 import java.util.prefs.Preferences;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class Settings
 {
 
-	private Preferences preferenceFile = Preferences.userRoot().node("HotelReservation.properties");
+	private Preferences preferenceFile = null;
+
+	private Settings(){
+	preferenceFile = Preferences.userRoot().node("HotelReservation.properties");
+
+	try(InputStream input = new FileInputStream("HotelReservation.properties"))
+	{
+		preferenceFile.importPreferences(input);
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	}
+	private static class Singleton
+	{
+		private static final Settings INSTANCE = new Settings();
+	}
+
+	public static Settings getInstance()
+	{
+		return Singleton.INSTANCE;
+	}
+
+	public void save()
+	{
+		try(OutputStream output = new FileOutputStream("HotelReservation.properties"))
+		{
+			preferenceFile.exportSubtree(output);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 
 	public String getDBHost()
 	{
+
 		return preferenceFile.get("DBHost", "localhost");
 	}
 
