@@ -20,6 +20,7 @@ You can use your favourite IDE wich supports building java to actually build thi
 
 ## Compiling
 ```sh
+#assumming your current directory is HotelReservation
 mkdir bin
 javac -d ./bin/ src/*.java
 ```
