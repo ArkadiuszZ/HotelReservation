@@ -10,6 +10,10 @@ Simple appliaction written in java for managing hotel rooms occupancy across tim
 
 You can use [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or [OpenJDK](https://openjdk.java.net/install/index.html) to build this application from source.
 
+#### JavaFX
+
+You can download [javaFX](https://gluonhq.com/products/javafx/) or you can build it [from source](https://github.com/openjdk/jfx).
+
 #### PostgreSQL Database
 
 You can download installer from [this site.](https://www.postgresql.org/download/)
@@ -22,11 +26,11 @@ You can use your favourite IDE wich supports building java to actually build thi
 ```sh
 #assumming your current directory is HotelReservation
 mkdir bin
-javac -d ./bin/ src/*.java
+javac --module-path <"path to your javafx lib dir"> --add-modules javafx.controls -d ./bin/ src/*.java
 ```
 ## Running
 ```sh
-java -cp ./bin/ -p ./resources/ Main
+java -cp ./bin/ -p ./resources/:<"path to your javafx lib dir"> --add-modules javafx.controls Main
 ```
 ## TODO
 
