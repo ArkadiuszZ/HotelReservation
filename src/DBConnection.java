@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class DBConnection
 {
-	private Connection current_connection = null;
+	private Connection currentConnection = null;
 	private Settings settings = null;
 
 	private DBConnection()
@@ -17,7 +17,7 @@ public class DBConnection
 		String user = settings.getDBUser();
 		String password = settings.getDBPassword();
 		try{
-			current_connection = DriverManager.getConnection(url, user, password);
+			currentConnection = DriverManager.getConnection(url, user, password);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}

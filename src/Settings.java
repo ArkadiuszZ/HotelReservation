@@ -8,6 +8,7 @@ public class Settings
 {
 
 	private Preferences preferenceFile = null;
+	private Boolean fileExists = false;
 
 	private Settings(){
 	preferenceFile = Preferences.userRoot().node("HotelReservation.properties");
@@ -15,9 +16,11 @@ public class Settings
 	try(InputStream input = new FileInputStream("HotelReservation.properties"))
 	{
 		preferenceFile.importPreferences(input);
+		fileExists = true;
 	}
 	catch(Exception e)
 	{
+		fileExists = false;
 		e.printStackTrace();
 	}
 	}
@@ -29,6 +32,11 @@ public class Settings
 	public static Settings getInstance()
 	{
 		return Singleton.INSTANCE;
+	}
+
+	public Boolean fileExists()
+	{
+		return fileExists;
 	}
 
 	public void save()
