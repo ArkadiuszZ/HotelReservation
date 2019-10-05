@@ -18,7 +18,7 @@ You can download installer from [this site.](https://www.postgresql.org/download
 
 You can use your favourite IDE wich supports building java to actually build this application.
 
-## Comiling
+## Compiling
 ```sh
 mkdir bin
 javac -d ./bin/ src/*.java
