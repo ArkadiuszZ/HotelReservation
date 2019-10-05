@@ -1,25 +1,36 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import Settings;
 
-public class DBConnection {
-	Connection current_connection = null;
-	public static Connection connector()
+public class DBConnection
+{
+	private Connection current_connection = null;
+	private Settings settings = null;
+
+	private DBConnection()
 	{
-		String url=(new StringBuilder())
-			.append("jdbc:postgresql://")
-			.append(settings.getDBHost())
-			.append("/")
-			.append(settings.getDBName());
+		settings = new Settings();
+		String url = "jdbc:postgresql://" +
+			settings.getDBHost() +
+			"/"+
+			settings.getDBName();
 		String user = settings.getDBUser();
-		String.password = settings.getDBPassword();
+		String password = settings.getDBPassword();
 		try{
 			current_connection = DriverManager.getConnection(url, user, password);
-	} catch(SQLException e) {
-		System.out.println(e.getMessage());
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
 	}
-	return current_connection;
+
+	private static class LazyHolder
+	{
+		private static final DBConnection INSTANCE = new DBConnection();
+	}
+
+	public static DBConnection getInstance()
+	{
+		return LazyHolder.INSTANCE;
 	}
 }
 

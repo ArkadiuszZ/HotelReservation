@@ -12,12 +12,12 @@ public class Settings
 
 	public String getDBName()
 	{
-		return  preferenceFile.get("DBName", "HotelReservation");
+		return  preferenceFile.get("DBName", "hotelreservation");
 	}
 
 	public String getDBUser()
 	{
-		return  preferenceFile.get("DBUser", "HotelReservation");
+		return  preferenceFile.get("DBUser", "hotelreservation");
 	}
 
 	public String getDBPassword()
@@ -32,16 +32,16 @@ public class Settings
 
 	public void setDBName(String name)
 	{
-		preference.put("DBName", name);
+		preferenceFile.put("DBName", name);
 	}
 
 	public void setDBUser(String user)
 	{
-		preference.put("DBUser", user);
+		preferenceFile.put("DBUser", user);
 	}
 
 	public void setDBPassword(String password)
 	{
-		preference.put("DBPassword", password);
+		preferenceFile.put("DBPassword", password);
 	}
 }
