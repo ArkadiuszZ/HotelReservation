@@ -1,6 +1,4 @@
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Main extends Application
@@ -8,12 +6,12 @@ public class Main extends Application
 	@Override
 	public void start(Stage primaryStage)
 	{
-		Button btOK = new Button("OK");
-		Scene scene = new Scene(btOK, 200, 250);
-		primaryStage.setTitle("MyJavaFX");
-		primaryStage.setScene(scene);
+		MainWindow window = new MainWindow();
+		primaryStage.setTitle("Hotel Reservation");
+		primaryStage.setScene(window.getScene());
 		primaryStage.show();
 	}
+
 	public static void main(String[] args)
 	{
 		Settings settings = Settings.getInstance();
