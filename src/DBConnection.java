@@ -11,8 +11,7 @@ public class DBConnection
 	{
 		settings =Settings.getInstance();
 		String url = "jdbc:postgresql://" +
-			settings.getDBHost() +
-			"/"+
+			settings.getDBHost() + "/"+
 			settings.getDBName();
 		String user = settings.getDBUser();
 		String password = settings.getDBPassword();

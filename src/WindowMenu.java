@@ -25,20 +25,19 @@ class WindowMenu
 	{
 		return mainMenu;
 	}
-	public void addMenu(Menu menu)
+	public void addMenuItem(String menu, MenuItem menuItem)
 	{
-		if(menuNames.stream().anyMatch(string -> string.equals(menu.getText())))
+		if(menuNames.stream().anyMatch(string -> string.equals(menu)))
 		{
-			Menu editMenu = mainMenu.getMenus().get(menuNames.indexOf(menu.getText()));
-			for(MenuItem menuItem: menu.getItems())
-			{
-				editMenu.getItems().add(menuItem);
-			}
+			Menu editMenu = mainMenu.getMenus().get(menuNames.indexOf(menu));
+            editMenu.getItems().add(menuItem);
 		}
 		else
 		{
-			mainMenu.getMenus().add(menu);
-			menuNames.add(menu.getText());
+            Menu newMenu = new Menu(menu);
+            newMenu.getItems().add(menuItem);
+			mainMenu.getMenus().add(newMenu);
+			menuNames.add(menu);
 		}
 	}
 }
