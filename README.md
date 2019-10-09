@@ -24,7 +24,8 @@ You can use your favourite IDE wich supports building java to actually build thi
 
 ## Compiling
 ```sh
-#assumming your current directory is HotelReservation this will create bunch of class files in HotelReservation directory
+#assumming your current directory is HotelReservation 
+#this will create bunch of class files in HotelReservation directory
 javac --module-path <"path to your javafx lib dir"> --add-modules javafx.controls -d ./ src/*.java
 
 ```
