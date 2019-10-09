@@ -1,0 +1,7 @@
+@font-face {
+    font-family:"Monaco for Powerline";
+    src: url("MonacoforPowerline.otf");
+}
+.root{
+    -fx-font-family: "Monaco for Powerline";
+}

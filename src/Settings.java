@@ -51,6 +51,15 @@ public class Settings
 		}
 	}
 
+    public String getLocaleCountry()
+    {
+        return preferenceFile.get("LocaleCountry","none");
+    }
+    public String getLocaleLang()
+    {
+        return preferenceFile.get("LocaleLang","none");
+    }
+
 	public String getDBHost()
 	{
 
@@ -71,6 +80,16 @@ public class Settings
 	{
 		return  preferenceFile.get("DBPassword", "HotelReservation");
 	}
+    
+    public void setLocaleCountry(String localeCountry)
+    {
+        preferenceFile.put("LocaleCountry", localeCountry);
+    }
+
+    public void setLocaleLang(String localeLang)
+    {
+        preferenceFile.put("LocaleLang", localeLang);
+    }
 
 	public void setDBHost(String host)
 	{
