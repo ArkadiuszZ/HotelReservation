@@ -24,13 +24,13 @@ You can use your favourite IDE wich supports building java to actually build thi
 
 ## Compiling
 ```sh
-#assumming your current directory is HotelReservation
-mkdir bin
-javac --module-path <"path to your javafx lib dir"> --add-modules javafx.controls -d ./bin/ src/*.java
+#assumming your current directory is HotelReservation this will create bunch of class files in HotelReservation directory
+javac --module-path <"path to your javafx lib dir"> --add-modules javafx.controls -d ./ src/*.java
+
 ```
 ## Running
 ```sh
-java -cp ./bin/ -p ./resources/:<"path to your javafx lib dir"> --add-modules javafx.controls Main
+java  -p ./resources/:<"path to your javafx lib dir"> --add-modules javafx.controls Main
 ```
 ## TODO
 
