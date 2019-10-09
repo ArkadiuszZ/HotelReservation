@@ -1,0 +1,20 @@
+@font-face {
+    font-family:"Monaco for Powerline";
+    src: url("MonacoforPowerline.otf");
+}
+.dialog-pane{
+    -fx-font-family: "Monaco for Powerline";
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+.dialog-pane > .content.label {
+    -fx-text-fill: white;
+}
+.dialog-pane:header .header-panel .label {
+    -fx-text-fill: white;
+}
+.dialog-pane:header .header-panel {
+    -fx-font-family: "Monaco for Powerline";
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}

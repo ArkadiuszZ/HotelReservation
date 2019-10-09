@@ -5,3 +5,11 @@
 .root{
     -fx-font-family: "Monaco for Powerline";
 }
+
+.dialog-pane {
+    -fx-font-family: "Monaco for Powerline";
+}
+.dialog-pane .header-panel {
+    -fx-background-color: red;
+    -fx-font-family: "Monaco for Powerline";
+}

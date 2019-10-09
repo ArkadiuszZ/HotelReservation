@@ -4,22 +4,12 @@ import java.sql.SQLException;
 
 public class DBConnection
 {
-	private Connection currentConnection = null;
-	private Settings settings = null;
+	private Connection currentConnection;
+    private boolean connected = false;
 
 	private DBConnection()
 	{
-		settings =Settings.getInstance();
-		String url = "jdbc:postgresql://" +
-			settings.getDBHost() + "/"+
-			settings.getDBName();
-		String user = settings.getDBUser();
-		String password = settings.getDBPassword();
-		try{
-			currentConnection = DriverManager.getConnection(url, user, password);
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
+        setConnection();
 	}
 
 	private static class Singleton
@@ -31,5 +21,28 @@ public class DBConnection
 	{
 		return Singleton.INSTANCE;
 	}
+    public void setConnection()
+    {
+		Settings settings =Settings.getInstance();
+		String url = "jdbc:postgresql://" +
+			settings.getDBHost() + "/"+
+			settings.getDBName();
+		String user = settings.getDBUser();
+		String password = settings.getDBPassword();
+		try{
+			currentConnection = DriverManager.getConnection(url, user, password);
+            connected = true;
+		} catch(SQLException e) {
+            connected = false;
+			e.printStackTrace();
+		} catch(Exception e){
+            connected = false;
+            e.printStackTrace();
+        }
+    }
+    public boolean isConnected()
+    {
+        return connected;
+    }
 }
 

@@ -1,0 +1,7 @@
+@font-face {
+    font-family:"Monaco for Powerline";
+    src: url("MonacoforPowerline.otf");
+}
+.dialog-pane {
+    -fx-font-family: "Monaco for Powerline";
+}

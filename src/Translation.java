@@ -4,6 +4,10 @@ import java.util.ResourceBundle;
 
 public class Translation 
 {
+    public static Locale[] LOCALES ={
+        Locale.ENGLISH,
+        new Locale("pl", "PL")
+    };
     Locale currentLocale = null;
     ResourceBundle words = null;
     private Translation()
@@ -16,6 +20,10 @@ public class Translation
 //            currentLocale = Locale.ENGLISH;
             currentLocale = Locale.getDefault();
         }
+        else
+        {
+            currentLocale = new Locale(lang, country);
+        }
         try
         {
             words = ResourceBundle.getBundle("resources/words", currentLocale);
@@ -26,6 +34,7 @@ public class Translation
         }
 
     } 
+
     private static class Singleton
     {
         private static final Translation INSTANCE = new Translation();
@@ -38,6 +47,11 @@ public class Translation
     public static String tr(String key)
     {
         return Singleton.INSTANCE.words.getString(key);
+    }
+
+    public static String currentLocaleDisplayLanguage()
+    {
+        return Singleton.INSTANCE.currentLocale.getDisplayLanguage();
     }
 
 }
