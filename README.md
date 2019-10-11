@@ -30,8 +30,13 @@ javac --module-path <"path to your javafx lib dir"> --add-modules javafx.control
 
 ```
 ## Running
+### Linux
 ```sh
 java  -p ./resources/:<"path to your javafx lib dir"> --add-modules javafx.controls Main
+```
+### Windows
+```sh
+java  -p ./resources/;<"path to your javafx lib dir"> --add-modules javafx.controls Main
 ```
 ## TODO
 
