@@ -21,7 +21,7 @@ public class Settings
 	catch(Exception e)
 	{
 		fileExists = false;
-		e.printStackTrace();
+		//e.printStackTrace();
 	}
 	}
 	private static class Singleton
@@ -47,7 +47,7 @@ public class Settings
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+		//	e.printStackTrace();
 		}
 	}
 
